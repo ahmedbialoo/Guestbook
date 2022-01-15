@@ -1,0 +1,41 @@
+﻿@model List<UserMessage>
+
+@{
+    ViewData["Title"] = "Home";
+    
+
+}
+
+<h1>Inbox</h1>
+
+<div style="display: flex; justify-content: space-around; margin:10px 10px;">
+    <a class="success_btn" asp-action="CreateMessage">Create New Message</a>
+    <a class="success_btn" asp-action="Sent">Sent Messages</a>
+</div>
+    
+@if (Model.Count!=0)
+{
+
+    <section class="contain">
+@foreach (var item in Model) {
+        <div class="message">
+            <div class="message_heading">
+                  <b>From: @item.Users.Username - @item.Messages.publishedDate</b>
+                  <div>
+                    @Html.ActionLink("Reply", "Reply", new { id = item.MessId }, new { @class = "delete_btn" })
+                  </div>
+            </div>
+            <p>@item.Messages.messBody</p>
+            @if (@item.Messages.respnose != null)
+              {
+                  <p class="reply"><b>Message Response</b><br>@item.Messages.respnose</p>    
+              }
+        </div>
+    }
+    </section>
+}
+
+    else
+    {
+        <h1>There is No Messeges</h1>
+    }

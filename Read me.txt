@@ -1,0 +1,40 @@
+-------Guestbook---------
+
+*This application is a society where the users can interact with each other by sending messages and replying to them.*
+
+--This application enables users to have the following features:
+	1. register on the application.
+	2. login and create new message and send to another user.
+	3. edit and delete your message.
+	4. reply to your inbox messages.
+
+--Technologies used :
+	1. ASP.Net Core.
+	2. Entity Framework.
+
+--This application consist of 7 views and 1 controller (HomeController) :
+	1. Create new user.
+	2. Create new message.
+	3. Edit message.
+	4. Inbox.
+	5. Login.
+	6. Reply to message.
+	7. Sent messages.
+--Packages installed :
+	1. Microsoft.AspNetCore.Session
+	2. Microsoft.EntityFrameworkCore
+	3. Microsoft.EntityFrameworkCore.Design
+	4. Microsoft.EntityFrameworkCore.SqlServer
+	5. Microsoft.EntityFrameworkCore.Tools
+	6. Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+--SQL Server is used to Establish the database.
+--First you need to add-migration and update-database to eshtablish the database models.
+--I used session with 60 minute expiration time to save login data after which u need to relogin, also you can not reach
+any page using routing if you are not logged in.
+
+--I used ViewBags and TempData to transfer data between controller and views.
+
+--Validations are used on to handle new user registeration data.
+
+--I Did not use any of Javascript,JQuery or bootstrap. 

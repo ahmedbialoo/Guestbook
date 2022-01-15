@@ -1,0 +1,52 @@
+﻿@model User  
+  
+@{  
+    ViewData["Title"] = "Create";  
+}  
+  
+<h1>User Registration</h1>  
+<hr />  
+  
+
+    <div style="width:40%">  
+        <form asp-action="CreateUser">  
+           
+              
+            <div>  
+                <label asp-for="Username"></label>  
+                <input asp-for="Username" class="inputs" />  
+                <span asp-validation-for="Username" style="color:orangered"></span>  
+            </div>  
+            <div>  
+                <label asp-for="Pwd"></label>  
+                <input asp-for="Pwd" class="inputs" type="password"/>  
+                <span asp-validation-for="Pwd" style="color:orangered"></span>  
+            </div>  
+            <div>  
+                <label asp-for="Confirmpwd" class="control-label"></label>  
+                <input asp-for="Confirmpwd" class="inputs" type="password" />  
+                <span asp-validation-for="Confirmpwd" style="color:orangered"></span>  
+            </div>  
+            <div>  
+                <label asp-for="Email"></label>  
+                <input type="email" asp-for="Email" class="inputs" />  
+                <span asp-validation-for="Email" style="color:orangered"></span>  
+            </div>  
+            <div>  
+                <label asp-for="Gender" style="display:block;"></label>  
+                
+                <input type="radio" name="Gender" value="M" style="margin:5px 5px 10px" />Male  
+                <input type="radio" name="Gender" value="F" />Female  
+  
+                <span asp-validation-for="Gender" style="color:orangered"></span>  
+            </div>  
+                
+            <div>  
+                        <input type="submit" value="Save User Details" class="success_btn" />  
+            </div>  
+            <p><b>@ViewBag.message</b>  
+                </form>  
+            </div>  
+
+  
+       

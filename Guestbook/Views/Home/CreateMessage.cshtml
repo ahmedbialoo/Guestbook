@@ -1,0 +1,28 @@
+﻿@model UserMessage
+
+@{
+    ViewData["Title"] = "CreateMessage";
+}
+
+<h1>CreateMessage</h1>
+
+
+<hr />
+<div style="width:40%;">
+        <form asp-action="CreateMessage">
+            <div>
+                <label asp-for="Messages.messBody"></label>
+                <p>@Html.TextAreaFor(n=>n.Messages.messBody,new{@class="inputs",style="width:500px; height:130px;"})</p>
+                <span asp-validation-for="Messages.messBody" style="color:orangered"></span>
+            </div>
+            <div style="margin:10px 10px;">
+                <label>Send Message To:</label>
+                <select style="width:120px;border-radius: 3px;" asp-for="ReceivingUserId" asp-items="ViewBag.users"></select>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between;">
+                <input type="submit" value="Create" class="success_btn" />
+                <a class="primary_btn" asp-action="Index">Back to Home</a>
+            </div>
+        </form>
+</div>

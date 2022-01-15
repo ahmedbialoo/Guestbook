@@ -1,0 +1,27 @@
+﻿@model Guestbook.Models.Message
+
+@{
+    ViewData["Title"] = "Reply";
+}
+
+<h1>Reply To Message</h1>
+<hr />
+
+ 
+        <form asp-action="Reply">
+            
+            <div>
+                <p>@Html.TextAreaFor(n=>n.messBody,new{@class="form-control",disabled = "disabled",style="width:500px; height:130px;"})</p>
+                <label asp-for="respnose"></label>
+                <p>@Html.TextAreaFor(n=>n.respnose,new{@class="inputs",style="width:500px; height:100px;"})</p>
+                <span asp-validation-for="messBody" class="text-danger"></span>
+            </div>
+            
+            <div>
+                @Html.ActionLink("Back", "Index", new { id = Model.MessId }, new { @class = "delete_btn", onclick = "return confirm('Leave page will not save your changes')" })
+                <input type="submit" value="Save" class="success_btn" />
+            </div>
+        </form>
+
+
+

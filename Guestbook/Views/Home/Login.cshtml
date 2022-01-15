@@ -1,0 +1,29 @@
+﻿
+@{  
+    ViewData["Title"] = "Login";  
+}  
+  
+<h1>Login</h1>  
+<hr />  
+  
+
+    <div style="width:40%">  
+        <form asp-action="login">  
+              
+            <div style="margin-bottom:10px">  
+                <label>Username</label>  
+                <input name="username" class="inputs" />  
+            </div>  
+            <div>  
+                <label>Password</label>  
+                <input name="password" class="inputs" type="password"/>   
+            </div>  
+            <div style="margin-top:10px">  
+                <input type="submit" value="Login" class="success_btn"></input>  
+            </div> 
+         </form>  
+            <p style="color:orangered">@ViewBag.error</p>
+            </div>  
+
+  
+       

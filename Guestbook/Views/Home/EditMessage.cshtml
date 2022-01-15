@@ -1,0 +1,27 @@
+﻿@model Guestbook.Models.Message
+
+@{
+    ViewData["Title"] = "EditMessage";
+}
+
+<h1>EditMessage</h1>
+
+
+<hr />
+
+
+        <form asp-action="EditMessage">
+            
+            <div>
+                <label asp-for="messBody"></label>
+                <p>@Html.TextAreaFor(n=>n.messBody,new{@class="inputs",style="width:500px; height:130px;"})</p>
+                <span asp-validation-for="messBody" style="color:orangered"></span>
+            </div>
+            
+            <div>
+                @Html.ActionLink("Back", "Sent", new { id = Model.MessId }, new { @class = "btn btn-danger", onclick = "return confirm('Leave page will not save your changes')" })
+                <input type="submit" value="Save" class="success_btn" />
+            </div>
+        </form>
+
+
